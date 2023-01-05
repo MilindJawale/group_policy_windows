@@ -1,0 +1,22 @@
+./LGPO.exe /b C: /n "Backup"
+./LGPO.exe /parse /m C:\LGPO_Backup\DomainSysvol\GPO\Machine\registry.pol >> C:lgpo.txt
+
+ ./LGPO.exe /t C:lgpo.txt
+ 
+ 
+ ; ----------------------------------------------------------------------
+; PARSING Computer POLICY
+; Source file:  C:\LGPO_Backup\DomainSysvol\GPO\Machine\registry.pol
+
+Computer
+Software\Policies\Microsoft\Windows\WinRM\Service
+AllowAutoConfig
+DELETE
+
+Computer
+Software\Policies\Microsoft\Windows\WinRM\Service\WinRS
+AllowRemoteShellAccess
+DELETE
+
+; PARSING COMPLETED.
+; ----------------------------------------------------------------------
